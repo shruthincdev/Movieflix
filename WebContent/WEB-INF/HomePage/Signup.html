@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup page</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../StyleSheets/HomePage/SignUp.css">
+</head>
+<body>
+<form>
+    <div class="form-group">
+        <label for="fname_id">First Name</label>
+        <input type="text" class="form-control" id="fname_id" placeholder="First Name">
+    </div>
+    <div class="form-group">
+        <label for="lname_id">Last Name</label>
+        <input type="text" class="form-control" id="lname_id" placeholder="Last Name">
+    </div>
+    <div class="form-group">
+        <label for="email_id">Email address</label>
+        <input type="email" class="form-control" id="email_id" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="emailConfirm_id">Confirm Email</label>
+        <input type="email" class="form-control" id="emailConfirm_id" placeholder="Confirm Email">
+    </div>
+    <div class="form-group">
+        <label for="password_id">Password</label>
+        <input type="password" class="form-control" id="password_id" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="passwordConfirm_id">Confirm Password</label>
+        <input type="password" class="form-control" id="passwordConfirm_id" placeholder="Confirm Password">
+    </div>
+    <label>User Type</label><br>
+    <div class="form-group">
+        <input type="radio" id="admin_id" value="userType_admin" name="usertype">Movieflix Admin<br>
+        <input type="radio" id="user_id"  value="userType_user" checked="checked" name="usertype">User<br>
+    </div>
+
+    <button type="button" class="btn btn-primary">Login</button>
+</form>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Already Signed In? <a href="SignIn.html">Click here for Login</a> </label>
+
+</body>
+</html>

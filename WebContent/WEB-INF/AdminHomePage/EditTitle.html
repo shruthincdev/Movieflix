@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Title</title>
+</head>
+<body>
+<form>
+    <!-- Write your comments here -->
+    <h3>Enter Title and click on Search</h3>
+    <!-- Title -->
+    <div class="form-group" >
+        <label for="title_id" class="label_font">Title</label>
+        <input type="text" class="form-control" id="title_id" placeholder="Title">
+        <br>
+        <button type="button" class="btn btn-primary" id="search_Title">Search</button>
+    </div>
+
+    <!-- Release year -->
+    <div class="form-group">
+        <label for="year_id" class="label_font">Release Year</label>
+        <input type="text" class="form-control" id="year_id" placeholder="Year">
+    </div>
+
+    <!-- US Certificates -->
+    <div class="form-group" id="certificate">
+        <label class="label_font">US Certificates</label><br>
+        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates" value="general_id">G - Rated</label><br>
+        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates" value="pg_id">PG - Rated</label><br>
+        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates" value="pg13_id">PG-13 - Rated</label><br>
+        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates" value="r_id">R - Rated</label><br>
+        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates" value="nc17_id">NC-17 - Rated</label><br>
+    </div>
+    <br>
+
+    <!-- Release Date -->
+    <div class="form-group">
+        <label class="label_font" for="datepicker">Release Date</label><input type="text" class="form-control" id="datepicker" />
+    </div>
+
+    <!-- Runtime  -->
+    <div class="form-group">
+        <label class="label_font" for="time_id">Run Time</label>
+        <input type="number" class="form-control" min="1" max="300" step="1" value="120" id="time_id" >
+    </div>
+
+    <!-- Genre  -->
+    <div class="inputs">
+        <label class="label_font">Genre</label>
+        <table>
+            <tr><td><input id="genres-1" type="checkbox" name="genres" value="action" > <label for="genres-1">Action</label></td>
+                <td><input id="genres-2" type="checkbox" name="genres" value="adventure" > <label for="genres-2">Adventure</label></td>
+                <td><input id="genres-3" type="checkbox" name="genres" value="animation" > <label for="genres-3">Animation</label></td>
+                <td><input id="genres-4" type="checkbox" name="genres" value="biography" > <label for="genres-4">Biography</label></td>
+            </tr>
+            <tr><td><input id="genres-5" type="checkbox" name="genres" value="comedy" > <label for="genres-5">Comedy</label></td>
+                <td><input id="genres-6" type="checkbox" name="genres" value="crime" > <label for="genres-6">Crime</label></td>
+                <td><input id="genres-7" type="checkbox" name="genres" value="documentary" > <label for="genres-7">Documentary</label></td>
+                <td><input id="genres-8" type="checkbox" name="genres" value="drama" > <label for="genres-8">Drama</label></td>
+            </tr>
+            <tr><td><input id="genres-9" type="checkbox" name="genres" value="family" > <label for="genres-9">Family</label></td>
+                <td><input id="genres-10" type="checkbox" name="genres" value="fantasy" > <label for="genres-10">Fantasy</label></td>
+                <td><input id="genres-11" type="checkbox" name="genres" value="film_noir" > <label for="genres-11">Film-Noir</label></td>
+                <td><input id="genres-12" type="checkbox" name="genres" value="game_show" > <label for="genres-12">Game-Show</label></td>
+            </tr>
+            <tr><td><input id="genres-13" type="checkbox" name="genres" value="history" > <label for="genres-13">History</label></td>
+                <td><input id="genres-14" type="checkbox" name="genres" value="horror" > <label for="genres-14">Horror</label></td>
+                <td><input id="genres-15" type="checkbox" name="genres" value="music" > <label for="genres-15">Music</label></td>
+                <td><input id="genres-16" type="checkbox" name="genres" value="musical" > <label for="genres-16">Musical</label></td>
+            </tr>
+            <tr><td><input id="genres-17" type="checkbox" name="genres" value="mystery" > <label for="genres-17">Mystery</label></td>
+                <td><input id="genres-18" type="checkbox" name="genres" value="news" > <label for="genres-18">News</label></td>
+                <td><input id="genres-19" type="checkbox" name="genres" value="reality_tv" > <label for="genres-19">Reality-TV</label></td>
+                <td><input id="genres-20" type="checkbox" name="genres" value="romance" > <label for="genres-20">Romance</label></td>
+            </tr>
+            <tr><td><input id="genres-21" type="checkbox" name="genres" value="sci_fi" > <label for="genres-21">Sci-Fi</label></td>
+                <td><input id="genres-22" type="checkbox" name="genres" value="sport" > <label for="genres-22">Sport</label></td>
+                <td><input id="genres-23" type="checkbox" name="genres" value="talk_show" > <label for="genres-23">Talk-Show</label></td>
+                <td><input id="genres-24" type="checkbox" name="genres" value="thriller" > <label for="genres-24">Thriller</label></td>
+            </tr>
+            <tr><td><input id="genres-25" type="checkbox" name="genres" value="war" > <label for="genres-25">War</label></td>
+                <td><input id="genres-26" type="checkbox" name="genres" value="western" > <label for="genres-26">Western</label></td>
+        </table>
+    </div>
+
+    <!-- Director Name -->
+    <div class="form-group" >
+        <label for="director_id" class="label_font">Director</label><input type="text" class="form-control" id="director_id" placeholder="Director Name">
+    </div>
+
+    <!-- Writer's Name -->
+    <div class="form-group">
+        <label for="Writers_id" class="label_font">Writers</label>
+        <textarea class="form-control" rows="5" id="Writers_id" placeholder="Comma separated writer's names"></textarea>
+    </div>
+
+    <!-- Actor's Name -->
+    <div class="form-group">
+        <label for="actors_id" class="label_font">Actors</label>
+        <textarea class="form-control" rows="5" id="actors_id" placeholder="Comma separated actor's names"></textarea>
+    </div>
+
+    <!-- Plot -->
+    <div class="form-group">
+        <label for="plot_id" class="label_font">Plot</label>
+        <textarea class="form-control" rows="5" id="plot_id" placeholder="Plot of the movie"></textarea>
+    </div>
+
+    <!-- Language -->
+    <div class="form-group">
+        <label for="language_id" class="label_font">Language</label>
+        <select class="form-control" id="language_id">
+            <option></option>
+            <option>Arabic</option>
+            <option>Bulgarian</option>
+            <option>Chinese</option>
+            <option>Croatian</option>
+            <option>Dutch</option>
+            <option>English</option>
+            <option>Finnish</option>
+            <option>French</option>
+            <option>German</option>
+            <option>Greek</option>
+            <option>Hebrew</option>
+            <option>Hindi</option>
+            <option>Hungarian</option>
+            <option>Icelandic</option>
+            <option>Italian</option>
+            <option>Japanese</option>
+            <option>Korean</option>
+            <option>Norwegian</option>
+            <option>Persian</option>
+            <option>Polish</option>
+            <option>Portuguese</option>
+            <option>Punjabi</option>
+            <option>Romanian</option>
+            <option>Russian</option>
+            <option>Spanish</option>
+            <option>Swedish</option>
+            <option>Telugu</option>
+            <option>Turkish</option>
+            <option>Ukrainian</option>
+        </select>
+    </div>
+
+    <!-- Country -->
+    <div class="form-group">
+        <label for="country_id" class="label_font">Select list:</label>
+        <select class="form-control" id="country_id">
+            <option></option>
+            <option>Argentina</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Belgium</option>
+            <option>Brazil</option>
+            <option>Bulgaria</option>
+            <option>Canada</option>
+            <option>China</option>
+            <option>Colombia</option>
+            <option>Costa Rica</option>
+            <option>Czech Republic</option>
+            <option>Denmark</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>Germany</option>
+            <option>Greece</option>
+            <option>Hong Kong</option>
+            <option>Hungary</option>
+            <option>Iceland</option>
+            <option>India</option>
+            <option>Iran</option>
+            <option>Ireland</option>
+            <option>Italy</option>
+            <option>Japan</option>
+            <option>Malaysia</option>
+            <option>Mexico</option>
+            <option>Netherlands</option>
+            <option>New Zealand</option>
+            <option>Pakistan</option>
+            <option>Poland</option>
+            <option>Portugal</option>
+            <option>Romania</option>
+            <option>Russia</option>
+            <option>Singapore</option>
+            <option>South Africa</option>
+            <option>Spain</option>
+            <option>Sweden</option>
+            <option>Switzerland</option>
+            <option>Thailand</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+        </select>
+    </div>
+
+    <!-- Awards -->
+    <!-- Plot -->
+    <div class="form-group">
+        <label for="awards_id" class="label_font">Awards & Nominations</label>
+        <textarea class="form-control" rows="3" id="awards_id" placeholder="Awards and Nominations"></textarea>
+    </div>
+
+    <!-- Poster URL -->
+    <div class="form-group" >
+        <label for="poster_id" class="label_font">Poster URL</label>
+        <input type="text" class="form-control" id="poster_id" placeholder="IMDB poster URL">
+    </div>
+
+    <!-- Metascore -->
+    <div class="form-group" >
+        <label for="score_id" class="label_font">Metascore</label>
+        <input type="text" class="form-control" id="score_id" placeholder="Metascore">
+    </div>
+
+    <!-- IMDB rating -->
+    <div class="form-group" >
+        <label for="rating_id" class="label_font">IMDB rating</label>
+        <input type="text" class="form-control" id="rating_id" placeholder="IMDB rating">
+    </div>
+
+    <!-- IMDB votes -->
+    <div class="form-group" >
+        <label for="votes_id" class="label_font">IMDB votes</label>
+        <input type="text" class="form-control" id="votes_id" placeholder="IMDB votes">
+    </div>
+
+    <!-- IMDB ID -->
+    <div class="form-group" >
+        <label for="imdb_id" class="label_font">IMDB id</label>
+        <input type="text" class="form-control" id="imdb_id" placeholder="IMDB ID">
+    </div>
+
+    <!-- Country -->
+    <div class="form-group">
+        <label for="type_id" class="label_font">Select Type of Title:</label>
+        <select class="form-control" id="type_id">
+            <option></option>
+            <option>Movie</option>
+            <option>TV show</option>
+        </select>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary" id="update_Title"><b>Update Title</b></button>
+    <button type="button" class="btn btn-primary" id="Cancel_update"><b>Cancel Title</b></button>
+
+</form>
+</body>
+</html>

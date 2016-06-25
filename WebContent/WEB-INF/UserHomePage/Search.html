@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Title</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../StyleSheets/HomePage/AddTitle.css">
+</head>
+<body>
+    <form>
+    <div class="form-group">
+        <label for="search_id" class="label_font">Search Title</label>
+        <input type="text" class="form-control" id="search_id" placeholder="Movie Title, TV Show title...">
+
+        <br>
+        <label for="genre_id" class="label_font">Genre</label>
+        <select class="form-control" id="genre_id">
+            <option></option>
+            <option>Action</option>
+            <option>Adventure</option>
+            <option>Animation</option>
+            <option>Biography</option>
+            <option>Comedy</option>
+            <option>Crime</option>
+            <option>Documentary</option>
+            <option>Drama</option>
+            <option>Family</option>
+            <option>Fantasy</option>
+            <option>Film-Noir</option>
+            <option>Game-Show</option>
+            <option>History</option>
+            <option>Horror</option>
+            <option>Music</option>
+            <option>Musical</option>
+            <option>Mystery</option>
+            <option>News</option>
+            <option>Reality-TV</option>
+            <option>Romance</option>
+            <option>Sci-Fi</option>
+            <option>Sport</option>
+            <option>Talk-Show</option>
+            <option>Thriller</option>
+            <option>War</option>
+            <option>Western</option>
+        </select>
+
+        <br>
+        <label for="type_id" class="label_font">Title Type</label>
+        <select class="form-control" id="type_id">
+            <option></option>
+            <option>Movie</option>
+            <option>TV Show</option>
+        </select>
+
+        <br>
+        <label for="year_id" class="label_font">Year</label>
+        <input type="number" class="form-control" width="10" min="1900" max="2025" step="1" value="2016" id="year_id">
+
+        <br>
+        <button type="button" class="btn btn-primary" id="search_Title">Search Title</button>
+
+    </div>
+    </form>
+</body>
+</html>

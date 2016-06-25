@@ -1,0 +1,15 @@
+body {
+    background-image: url("../../images/three.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2{
+    font-size: 40px;
+    color: mintcream;
+}
+
+a{
+    font-size: 20px;
+    color: mintcream;
+}
