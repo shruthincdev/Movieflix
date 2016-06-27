@@ -1,0 +1,11 @@
+.label_font, #genre_id{
+    font-family: "Times New Roman";
+    font-size: 130%;
+    color: crimson;
+}
+
+.form-inline{
+    position: absolute;
+    top: 80px;
+    left: 5px;
+}
