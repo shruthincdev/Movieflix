@@ -2,7 +2,19 @@
  * Created by Shruthin on 6/24/2016.
  */
 $(function() {
+    
+    alert("Inside JQuery");
+    
     $( "#datepicker" ).datepicker();
+
+   /* $("#addTitle_action").submit(function () {
+        if(document.getElementById("title_id")==null)
+            msg=msg+"Titile is required";
+            alert(msg);
+        return;
+    }) */
+
+  
 });
 
 jQuery.browser = {};
@@ -14,3 +26,16 @@ jQuery.browser = {};
         jQuery.browser.version = RegExp.$1;
     }
 })();
+
+
+function validateInputParameters(){
+    alert("Inside function");
+    var errorMsg ="";
+    if(document.getElementById(title_id)==null)
+        errorMsg=errorMsg+"Title Cannot Be Empty";
+    if(document.getElementById(year_id)==null)
+        errorMsg=errorMsg+", Release Year Cannot Be Empty";
+    
+}
+
+
