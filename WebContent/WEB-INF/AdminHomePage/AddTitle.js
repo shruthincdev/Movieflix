@@ -25,6 +25,7 @@ $(document).ready(function() {
         {
             year_id_p.innerHTML = "** Year is mandatory field";
             count = 1;
+            
         }
         else
         {
