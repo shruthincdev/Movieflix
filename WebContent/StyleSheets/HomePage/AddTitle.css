@@ -17,12 +17,21 @@ form {
 
 .label_font, #genre_id{
     font-family: "Times New Roman";
-    font-size: 130%;
-    color: crimson;
+    font-size: 140%;
+    color: blue;
 }
 
 h3{
     color: indigo;
     font-family: cursive;
+}
+
+p{
+    font-family: 'Times New Roman';
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+
 }
 

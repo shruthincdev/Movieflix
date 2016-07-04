@@ -2,3 +2,9 @@
     float: right;
     align-content: center;
 }
+
+#imdb_id1{
+    font-family: "Times New Roman";
+    font-size: 130%;
+    color: chocolate;
+}

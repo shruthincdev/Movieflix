@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Title</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <!-- JQuery Library -->
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
+    <!-- JQuery UI Microsoft Ajax CDN -->
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.17/jquery-ui.min.js"></script>
+    <!-- External JS file -->
+    <script type="text/javascript" src="EditTitle.js"></script>
+    <!-- UI theme CDN -->
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.17/themes/blitzer/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="../../StyleSheets/HomePage/AddTitle.css">
+
 </head>
 <body>
 <form>
@@ -10,226 +22,249 @@
     <h3>Enter Title and click on Search</h3>
     <!-- Title -->
     <div class="form-group" >
-        <label for="title_id" class="label_font">Title</label>
-        <input type="text" class="form-control" id="title_id" placeholder="Title">
+        <label for="imdb_edit_id" class="label_font">IMDB id</label>
+        <input type="text" class="form-control" id="imdb_edit_id" placeholder="IMDB ID">
         <br>
-        <button type="button" class="btn btn-primary" id="search_Title">Search</button>
+        <button type="button" class="btn btn-primary" id="search_edit_Title">Search</button>
+    </div>
+    <!-- Title -->
+    <div class="form-group" >
+        <label for="title_edit_id" class="label_font">Title</label>
+        <input type="text" class="form-control" id="title_edit_id" placeholder="Title">
+        <p id="title_edit_id_p"></p>
     </div>
 
     <!-- Release year -->
     <div class="form-group">
-        <label for="year_id" class="label_font">Release Year</label>
-        <input type="text" class="form-control" id="year_id" placeholder="Year">
+        <label for="year_edit_id" class="label_font">Release Year</label>
+        <input type="number" class="form-control" id="year_edit_id" placeholder="Year" min="1900" max="2050" step="1">
+        <p id="year_edit_id_p"></p>
     </div>
 
     <!-- US Certificates -->
     <div class="form-group" id="certificate">
         <label class="label_font">US Certificates</label><br>
-        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates" value="general_id">G - Rated</label><br>
-        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates" value="pg_id">PG - Rated</label><br>
-        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates" value="pg13_id">PG-13 - Rated</label><br>
-        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates" value="r_id">R - Rated</label><br>
-        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates" value="nc17_id">NC-17 - Rated</label><br>
+        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates_edit" value="general_id">G - Rated</label><br>
+        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates_edit" value="pg_id">PG - Rated</label><br>
+        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates_edit" value="pg13_id">PG-13 - Rated</label><br>
+        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates_edit" value="r_id">R - Rated</label><br>
+        &nbsp;&nbsp;<label class="child"><input type="radio" name="Certificates_edit" value="nc17_id">NC-17 - Rated</label><br>
+        <p id="certificate_edit_p"></p>
     </div>
     <br>
 
     <!-- Release Date -->
     <div class="form-group">
-        <label class="label_font" for="datepicker">Release Date</label><input type="text" class="form-control" id="datepicker" />
+        <label class="label_font" for="datepicker_edit">Release Date</label>
+        <input type="text" class="form-control" id="datepicker_edit" />
+        <p id="datepicker_edit_p"></p>
     </div>
 
     <!-- Runtime  -->
     <div class="form-group">
-        <label class="label_font" for="time_id">Run Time</label>
-        <input type="number" class="form-control" min="1" max="300" step="1" value="120" id="time_id" >
+        <label class="label_font" for="time_edit_id">Run Time</label>
+        <input type="number" class="form-control" min="1" max="300" step="1" value="120" id="time_edit_id" >
     </div>
 
+    <br>
     <!-- Genre  -->
     <div class="inputs">
         <label class="label_font">Genre</label>
         <table>
-            <tr><td><input id="genres-1" type="checkbox" name="genres" value="action" > <label for="genres-1">Action</label></td>
-                <td><input id="genres-2" type="checkbox" name="genres" value="adventure" > <label for="genres-2">Adventure</label></td>
-                <td><input id="genres-3" type="checkbox" name="genres" value="animation" > <label for="genres-3">Animation</label></td>
-                <td><input id="genres-4" type="checkbox" name="genres" value="biography" > <label for="genres-4">Biography</label></td>
+            <tr><td><input id="genres-1" type="checkbox" name="genres_edit" value="action" > <label for="genres-1">Action</label></td>
+                <td><input id="genres-2" type="checkbox" name="genres_edit" value="adventure" > <label for="genres-2">Adventure  </label></td>
+                <td><input id="genres-3" type="checkbox" name="genres_edit" value="animation" > <label for="genres-3">Animation</label></td>
+                <td><input id="genres-4" type="checkbox" name="genres_edit" value="biography" > <label for="genres-4">Biography</label></td>
             </tr>
-            <tr><td><input id="genres-5" type="checkbox" name="genres" value="comedy" > <label for="genres-5">Comedy</label></td>
-                <td><input id="genres-6" type="checkbox" name="genres" value="crime" > <label for="genres-6">Crime</label></td>
-                <td><input id="genres-7" type="checkbox" name="genres" value="documentary" > <label for="genres-7">Documentary</label></td>
-                <td><input id="genres-8" type="checkbox" name="genres" value="drama" > <label for="genres-8">Drama</label></td>
+            <tr><td><input id="genres-5" type="checkbox" name="genres_edit" value="comedy" > <label for="genres-5">Comedy</label></td>
+                <td><input id="genres-6" type="checkbox" name="genres_edit" value="crime" > <label for="genres-6">Crime</label></td>
+                <td><input id="genres-7" type="checkbox" name="genres_edit" value="documentary" > <label for="genres-7">Documentary  </label></td>
+                <td><input id="genres-8" type="checkbox" name="genres_edit" value="drama" > <label for="genres-8">Drama</label></td>
             </tr>
-            <tr><td><input id="genres-9" type="checkbox" name="genres" value="family" > <label for="genres-9">Family</label></td>
-                <td><input id="genres-10" type="checkbox" name="genres" value="fantasy" > <label for="genres-10">Fantasy</label></td>
-                <td><input id="genres-11" type="checkbox" name="genres" value="film_noir" > <label for="genres-11">Film-Noir</label></td>
-                <td><input id="genres-12" type="checkbox" name="genres" value="game_show" > <label for="genres-12">Game-Show</label></td>
+            <tr><td><input id="genres-9" type="checkbox" name="genres_edit" value="family" > <label for="genres-9">Family</label></td>
+                <td><input id="genres-10" type="checkbox" name="genres_edit" value="fantasy" > <label for="genres-10">Fantasy</label></td>
+                <td><input id="genres-11" type="checkbox" name="genres_edit" value="film_noir" > <label for="genres-11">Film-Noir  </label></td>
+                <td><input id="genres-12" type="checkbox" name="genres_edit" value="game_show" > <label for="genres-12">Game-Show</label></td>
             </tr>
-            <tr><td><input id="genres-13" type="checkbox" name="genres" value="history" > <label for="genres-13">History</label></td>
-                <td><input id="genres-14" type="checkbox" name="genres" value="horror" > <label for="genres-14">Horror</label></td>
-                <td><input id="genres-15" type="checkbox" name="genres" value="music" > <label for="genres-15">Music</label></td>
-                <td><input id="genres-16" type="checkbox" name="genres" value="musical" > <label for="genres-16">Musical</label></td>
+            <tr><td><input id="genres-13" type="checkbox" name="genres_edit" value="history" > <label for="genres-13">History</label></td>
+                <td><input id="genres-14" type="checkbox" name="genres_edit" value="horror" > <label for="genres-14">Horror</label></td>
+                <td><input id="genres-15" type="checkbox" name="genres_edit" value="music" > <label for="genres-15">Music</label></td>
+                <td><input id="genres-16" type="checkbox" name="genres_edit" value="musical" > <label for="genres-16">Musical    </label></td>
             </tr>
-            <tr><td><input id="genres-17" type="checkbox" name="genres" value="mystery" > <label for="genres-17">Mystery</label></td>
-                <td><input id="genres-18" type="checkbox" name="genres" value="news" > <label for="genres-18">News</label></td>
-                <td><input id="genres-19" type="checkbox" name="genres" value="reality_tv" > <label for="genres-19">Reality-TV</label></td>
-                <td><input id="genres-20" type="checkbox" name="genres" value="romance" > <label for="genres-20">Romance</label></td>
+            <tr><td><input id="genres-17" type="checkbox" name="genres_edit" value="mystery" > <label for="genres-17">Mystery</label></td>
+                <td><input id="genres-18" type="checkbox" name="genres_edit" value="news" > <label for="genres-18">News</label></td>
+                <td><input id="genres-19" type="checkbox" name="genres_edit" value="reality_tv" > <label for="genres-19">Reality-TV </label></td>
+                <td><input id="genres-20" type="checkbox" name="genres_edit" value="romance" > <label for="genres-20">Romance</label></td>
             </tr>
-            <tr><td><input id="genres-21" type="checkbox" name="genres" value="sci_fi" > <label for="genres-21">Sci-Fi</label></td>
-                <td><input id="genres-22" type="checkbox" name="genres" value="sport" > <label for="genres-22">Sport</label></td>
-                <td><input id="genres-23" type="checkbox" name="genres" value="talk_show" > <label for="genres-23">Talk-Show</label></td>
-                <td><input id="genres-24" type="checkbox" name="genres" value="thriller" > <label for="genres-24">Thriller</label></td>
+            <tr><td><input id="genres-21" type="checkbox" name="genres_edit" value="sci_fi" > <label for="genres-21">Sci-Fi</label></td>
+                <td><input id="genres-22" type="checkbox" name="genres_edit" value="sport" > <label for="genres-22">Sport</label></td>
+                <td><input id="genres-23" type="checkbox" name="genres_edit" value="talk_show" > <label for="genres-23">Talk-Show  </label></td>
+                <td><input id="genres-24" type="checkbox" name="genres_edit" value="thriller" > <label for="genres-24">Thriller</label></td>
             </tr>
-            <tr><td><input id="genres-25" type="checkbox" name="genres" value="war" > <label for="genres-25">War</label></td>
-                <td><input id="genres-26" type="checkbox" name="genres" value="western" > <label for="genres-26">Western</label></td>
+            <tr><td><input id="genres-25" type="checkbox" name="genres_edit" value="war" > <label for="genres-25">War</label></td>
+                <td><input id="genres-26" type="checkbox" name="genres_edit" value="western" > <label for="genres-26">Western</label></td>
         </table>
+        <p id="genres_edit_p"></p>
     </div>
 
+    <br>
     <!-- Director Name -->
     <div class="form-group" >
-        <label for="director_id" class="label_font">Director</label><input type="text" class="form-control" id="director_id" placeholder="Director Name">
+        <label for="director_edit_id" class="label_font">Director</label>
+        <input type="text" class="form-control" id="director_edit_id" placeholder="Director Name">
+        <p id="director_edit_id_p"></p>
     </div>
 
+    <br>
     <!-- Writer's Name -->
     <div class="form-group">
-        <label for="Writers_id" class="label_font">Writers</label>
-        <textarea class="form-control" rows="5" id="Writers_id" placeholder="Comma separated writer's names"></textarea>
+        <label for="Writers_edit_id" class="label_font">Writers</label>
+        <textarea class="form-control" rows="5" id="Writers_edit_id" placeholder="Comma separated writer's names"></textarea>
+        <p id="Writers_edit_id_p"></p>
     </div>
 
     <!-- Actor's Name -->
     <div class="form-group">
-        <label for="actors_id" class="label_font">Actors</label>
-        <textarea class="form-control" rows="5" id="actors_id" placeholder="Comma separated actor's names"></textarea>
+        <label for="actors_edit_id" class="label_font">Actors</label>
+        <textarea class="form-control" rows="5" id="actors_edit_id" placeholder="Comma separated actor's names"></textarea>
+        <p id="actors_edit_id_p"></p>
     </div>
 
     <!-- Plot -->
     <div class="form-group">
-        <label for="plot_id" class="label_font">Plot</label>
-        <textarea class="form-control" rows="5" id="plot_id" placeholder="Plot of the movie"></textarea>
+        <label for="plot_edit_id" class="label_font">Plot</label>
+        <textarea class="form-control" rows="5" id="plot_edit_id" placeholder="Plot of the movie"></textarea>
+        <p id="plot_edit_id_p"></p>
     </div>
 
     <!-- Language -->
     <div class="form-group">
         <label class="label_font">Select Language</label>
         <table>
-            <tr><td><input id="language-1" type="checkbox" name="genres" value="Arabic" > <label for="language-1">Arabic</label></td>
-                <td><input id="language-2" type="checkbox" name="genres" value="Bulgarian" > <label for="language-2">Bulgarian  </label></td>
-                <td><input id="language-3" type="checkbox" name="genres" value="Chinese" > <label for="language-3">Chinese</label></td>
-                <td><input id="language-4" type="checkbox" name="genres" value="Croatian" > <label for="language-4">Croatian</label></td>
-                <td><input id="language-5" type="checkbox" name="genres" value="Dutch" > <label for="language-5">Dutch</label></td>
+            <tr><td><input id="language-1" type="checkbox" name="language_edit" value="Arabic" > <label for="language-1">Arabic</label></td>
+                <td><input id="language-2" type="checkbox" name="language_edit" value="Bulgarian" > <label for="language-2">Bulgarian  </label></td>
+                <td><input id="language-3" type="checkbox" name="language_edit" value="Chinese" > <label for="language-3">Chinese</label></td>
+                <td><input id="language-4" type="checkbox" name="language_edit" value="Croatian" > <label for="language-4">Croatian</label></td>
+                <td><input id="language-5" type="checkbox" name="language_edit" value="Dutch" > <label for="language-5">Dutch</label></td>
             </tr><tr>
-            <td><input id="language-6" type="checkbox" name="genres" value="English" > <label for="language-6">English</label></td>
-            <td><input id="language-7" type="checkbox" name="genres" value="Finnish" > <label for="language-7">Finnish  </label></td>
-            <td><input id="language-8" type="checkbox" name="genres" value="French" > <label for="language-8">French</label></td>
-            <td><input id="language-9" type="checkbox" name="genres" value="German" > <label for="language-9">German</label></td>
-            <td><input id="language-10" type="checkbox" name="genres" value="Greek" > <label for="language-10">Greek</label></td>
+            <td><input id="language-6" type="checkbox" name="language_edit" value="English" > <label for="language-6">English</label></td>
+            <td><input id="language-7" type="checkbox" name="language_edit" value="Finnish" > <label for="language-7">Finnish  </label></td>
+            <td><input id="language-8" type="checkbox" name="language_edit" value="French" > <label for="language-8">French</label></td>
+            <td><input id="language-9" type="checkbox" name="language_edit" value="German" > <label for="language-9">German</label></td>
+            <td><input id="language-10" type="checkbox" name="language_edit" value="Greek" > <label for="language-10">Greek</label></td>
         </tr>
             <tr>
-                <td><input id="language-11" type="checkbox" name="genres" value="Hebrew" > <label for="language-11">Hebrew</label></td>
-                <td><input id="language-12" type="checkbox" name="genres" value="Hindi" > <label for="language-12">Hindi </label></td>
-                <td><input id="language-13" type="checkbox" name="genres" value="Hungarian" > <label for="language-13">Hungarian</label></td>
-                <td><input id="language-14" type="checkbox" name="genres" value="Icelandic" > <label for="language-14">Icelandic</label></td>
-                <td><input id="language-15" type="checkbox" name="genres" value="Italian" > <label for="language-15">Italian</label></td>
+                <td><input id="language-11" type="checkbox" name="language_edit" value="Hebrew" > <label for="language-11">Hebrew</label></td>
+                <td><input id="language-12" type="checkbox" name="language_edit" value="Hindi" > <label for="language-12">Hindi </label></td>
+                <td><input id="language-13" type="checkbox" name="language_edit" value="Hungarian" > <label for="language-13">Hungarian</label></td>
+                <td><input id="language-14" type="checkbox" name="language_edit" value="Icelandic" > <label for="language-14">Icelandic</label></td>
+                <td><input id="language-15" type="checkbox" name="language_edit" value="Italian" > <label for="language-15">Italian</label></td>
             </tr><tr>
-            <td><input id="language-16" type="checkbox" name="genres" value="Japanese" > <label for="language-16">Japanese</label></td>
-            <td><input id="language-17" type="checkbox" name="genres" value="Korean" > <label for="language-17">Korean</label>
-            <td><input id="language-18" type="checkbox" name="genres" value="Norwegian" > <label for="language-18">Norwegian</label></td>
-            <td><input id="language-19" type="checkbox" name="genres" value="Persian" > <label for="language-19">Persian</label></td>
-            <td><input id="language-20" type="checkbox" name="genres" value="Polish" > <label for="language-20">Polish </label></td>
+            <td><input id="language-16" type="checkbox" name="language_edit" value="Japanese" > <label for="language-16">Japanese</label></td>
+            <td><input id="language-17" type="checkbox" name="language_edit" value="Korean" > <label for="language-17">Korean</label>
+            <td><input id="language-18" type="checkbox" name="language_edit" value="Norwegian" > <label for="language-18">Norwegian</label></td>
+            <td><input id="language-19" type="checkbox" name="language_edit" value="Persian" > <label for="language-19">Persian</label></td>
+            <td><input id="language-20" type="checkbox" name="language_edit" value="Polish" > <label for="language-20">Polish </label></td>
         </tr>
             <tr>
-                <td><input id="language-21" type="checkbox" name="genres" value="Portuguese" > <label for="language-21">Portuguese</label></td>
-                <td><input id="language-22" type="checkbox" name="genres" value="Punjabi" > <label for="language-22">Punjabi</label></td>
-                <td><input id="language-23" type="checkbox" name="genres" value="Romanian" > <label for="language-23">Romanian</label></td>
-                <td><input id="language-24" type="checkbox" name="genres" value="Russian" > <label for="language-24">Russian </label></td>
-                <td><input id="language-25" type="checkbox" name="genres" value="Spanish" > <label for="language-25">Spanish</label></td>
+                <td><input id="language-21" type="checkbox" name="language_edit" value="Portuguese" > <label for="language-21">Portuguese</label></td>
+                <td><input id="language-22" type="checkbox" name="language_edit" value="Punjabi" > <label for="language-22">Punjabi</label></td>
+                <td><input id="language-23" type="checkbox" name="language_edit" value="Romanian" > <label for="language-23">Romanian</label></td>
+                <td><input id="language-24" type="checkbox" name="language_edit" value="Russian" > <label for="language-24">Russian </label></td>
+                <td><input id="language-25" type="checkbox" name="language_edit" value="Spanish" > <label for="language-25">Spanish</label></td>
             </tr><tr>
-            <td><input id="language-26" type="checkbox" name="genres" value="Swedish" > <label for="language-26">Swedish</label></td>
-            <td><input id="language-27" type="checkbox" name="genres" value="Telugu" > <label for="language-27">Telugu</label></td>
-            <td><input id="language-28" type="checkbox" name="genres" value="Turkish" > <label for="language-28">Turkish</label></td>
-            <td><input id="language-29" type="checkbox" name="genres" value="Ukrainian" > <label for="language-29">Ukrainian</label></td>
+            <td><input id="language-26" type="checkbox" name="language_edit" value="Swedish" > <label for="language-26">Swedish</label></td>
+            <td><input id="language-27" type="checkbox" name="language_edit" value="Telugu" > <label for="language-27">Telugu</label></td>
+            <td><input id="language-28" type="checkbox" name="language_edit" value="Turkish" > <label for="language-28">Turkish</label></td>
+            <td><input id="language-29" type="checkbox" name="language_edit" value="Ukrainian" > <label for="language-29">Ukrainian</label></td>
         </tr>
         </table>
+        <p id="language_edit_p"></p>
     </div>
 
     <!-- Country -->
     <div class="form-group">
         <label class="label_font">Select Country</label>
         <table>
-            <tr><td><input id="country-1" type="checkbox" name="countries" value="Argentina" > <label for="country-1">Argentina</label></td>
-                <td><input id="country-2" type="checkbox" name="countries" value="Australia" > <label for="country-2">Australia  </label></td>
-                <td><input id="country-3" type="checkbox" name="countries" value="Austria" > <label for="country-3">Austria</label></td>
-                <td><input id="country-4" type="checkbox" name="countries" value="Belgium" > <label for="country-4">Belgium</label></td>
-                <td><input id="country-5" type="checkbox" name="countries" value="Brazil" > <label for="country-5">Brazil</label></td>
+            <tr><td><input id="country-1" type="checkbox" name="countries_edit" value="Argentina" > <label for="country-1">Argentina</label></td>
+                <td><input id="country-2" type="checkbox" name="countries_edit" value="Australia" > <label for="country-2">Australia  </label></td>
+                <td><input id="country-3" type="checkbox" name="countries_edit" value="Austria" > <label for="country-3">Austria</label></td>
+                <td><input id="country-4" type="checkbox" name="countries_edit" value="Belgium" > <label for="country-4">Belgium</label></td>
+                <td><input id="country-5" type="checkbox" name="countries_edit" value="Brazil" > <label for="country-5">Brazil</label></td>
             </tr>
-            <tr><td><input id="country-6" type="checkbox" name="countries" value="Bulgaria" > <label for="country-6">Bulgaria</label></td>
-                <td><input id="country-7" type="checkbox" name="countries" value="Canada" > <label for="country-7">Canada  </label></td>
-                <td><input id="country-8" type="checkbox" name="countries" value="China" > <label for="country-8">China</label></td>
-                <td><input id="country-9" type="checkbox" name="countries" value="Colombia" > <label for="country-9">Colombia</label></td>
-                <td><input id="country-10" type="checkbox" name="countries" value="Costa Rica" > <label for="country-10">Costa Rica</label></td>
+            <tr><td><input id="country-6" type="checkbox" name="countries_edit" value="Bulgaria" > <label for="country-6">Bulgaria</label></td>
+                <td><input id="country-7" type="checkbox" name="countries_edit" value="Canada" > <label for="country-7">Canada  </label></td>
+                <td><input id="country-8" type="checkbox" name="countries_edit" value="China" > <label for="country-8">China</label></td>
+                <td><input id="country-9" type="checkbox" name="countries_edit" value="Colombia" > <label for="country-9">Colombia</label></td>
+                <td><input id="country-10" type="checkbox" name="countries_edit" value="Costa Rica" > <label for="country-10">Costa Rica</label></td>
             </tr>
-            <tr><td><input id="country-11" type="checkbox" name="countries" value="Czech Republic" > <label for="country-11">Czech Republic</label></td>
-                <td><input id="country-12" type="checkbox" name="countries" value="Denmark" > <label for="country-12">Denmark  </label></td>
-                <td><input id="country-13" type="checkbox" name="countries" value="Finland" > <label for="country-13">Finland</label></td>
-                <td><input id="country-14" type="checkbox" name="countries" value="France" > <label for="country-14">France</label></td>
-                <td><input id="country-15" type="checkbox" name="countries" value="Germany" > <label for="country-15">Germany</label></td>
+            <tr><td><input id="country-11" type="checkbox" name="countries_edit" value="Czech Republic" > <label for="country-11">Czech Republic</label></td>
+                <td><input id="country-12" type="checkbox" name="countries_edit" value="Denmark" > <label for="country-12">Denmark  </label></td>
+                <td><input id="country-13" type="checkbox" name="countries_edit" value="Finland" > <label for="country-13">Finland</label></td>
+                <td><input id="country-14" type="checkbox" name="countries_edit" value="France" > <label for="country-14">France</label></td>
+                <td><input id="country-15" type="checkbox" name="countries_edit" value="Germany" > <label for="country-15">Germany</label></td>
             </tr>
-            <tr><td><input id="country-16" type="checkbox" name="countries" value="Greece" > <label for="country-16">Greece</label></td>
-                <td><input id="country-17" type="checkbox" name="countries" value="Hong Kong" > <label for="country-17">Hong Kong  </label></td>
-                <td><input id="country-18" type="checkbox" name="countries" value="Hungary" > <label for="country-18">Hungary</label></td>
-                <td><input id="country-19" type="checkbox" name="countries" value="Iceland" > <label for="country-19">Iceland</label></td>
-                <td><input id="country-20" type="checkbox" name="countries" value="India" > <label for="country-20">India</label></td>
+            <tr><td><input id="country-16" type="checkbox" name="countries_edit" value="Greece" > <label for="country-16">Greece</label></td>
+                <td><input id="country-17" type="checkbox" name="countries_edit" value="Hong Kong" > <label for="country-17">Hong Kong  </label></td>
+                <td><input id="country-18" type="checkbox" name="countries_edit" value="Hungary" > <label for="country-18">Hungary</label></td>
+                <td><input id="country-19" type="checkbox" name="countries_edit" value="Iceland" > <label for="country-19">Iceland</label></td>
+                <td><input id="country-20" type="checkbox" name="countries_edit" value="India" > <label for="country-20">India</label></td>
             </tr>
-            <tr><td><input id="country-21" type="checkbox" name="countries" value="Iran" > <label for="country-21">Iran</label></td>
-                <td><input id="country-22" type="checkbox" name="countries" value="Ireland" > <label for="country-22">Ireland </label></td>
-                <td><input id="country-23" type="checkbox" name="countries" value="Italy" > <label for="country-23">Italy</label></td>
-                <td><input id="country-24" type="checkbox" name="countries" value="Japan" > <label for="country-24">Japan</label></td>
-                <td><input id="country-25" type="checkbox" name="countries" value="Malaysia" > <label for="country-25">Malaysia</label></td>
+            <tr><td><input id="country-21" type="checkbox" name="countries_edit" value="Iran" > <label for="country-21">Iran</label></td>
+                <td><input id="country-22" type="checkbox" name="countries_edit" value="Ireland" > <label for="country-22">Ireland </label></td>
+                <td><input id="country-23" type="checkbox" name="countries_edit" value="Italy" > <label for="country-23">Italy</label></td>
+                <td><input id="country-24" type="checkbox" name="countries_edit" value="Japan" > <label for="country-24">Japan</label></td>
+                <td><input id="country-25" type="checkbox" name="countries_edit" value="Malaysia" > <label for="country-25">Malaysia</label></td>
             </tr>
-            <tr><td><input id="country-26" type="checkbox" name="countries" value="Mexico" > <label for="country-26">Mexico</label></td>
-                <td><input id="country-27" type="checkbox" name="countries" value="Netherlands" > <label for="country-27">Netherlands</label></td>
-                <td><input id="country-28" type="checkbox" name="countries" value="New Zealand" > <label for="country-28">New Zealand</label></td>
-                <td><input id="country-29" type="checkbox" name="countries" value="Pakistan" > <label for="country-29">Pakistan</label></td>
-                <td><input id="country-30" type="checkbox" name="countries" value="Poland" > <label for="country-30">Poland</label></td>
+            <tr><td><input id="country-26" type="checkbox" name="countries_edit" value="Mexico" > <label for="country-26">Mexico</label></td>
+                <td><input id="country-27" type="checkbox" name="countries_edit" value="Netherlands" > <label for="country-27">Netherlands</label></td>
+                <td><input id="country-28" type="checkbox" name="countries_edit" value="New Zealand" > <label for="country-28">New Zealand</label></td>
+                <td><input id="country-29" type="checkbox" name="countries_edit" value="Pakistan" > <label for="country-29">Pakistan</label></td>
+                <td><input id="country-30" type="checkbox" name="countries_edit" value="Poland" > <label for="country-30">Poland</label></td>
             </tr>
-            <tr><td><input id="country-31" type="checkbox" name="countries" value="Portugal" > <label for="country-31">Portugal</label></td>
-                <td><input id="country-32" type="checkbox" name="countries" value="Romania" > <label for="country-32">Romania</label></td>
-                <td><input id="country-33" type="checkbox" name="countries" value="Russia" > <label for="country-33">Russia</label></td>
-                <td><input id="country-34" type="checkbox" name="countries" value="Singapore" > <label for="country-34">Singapore</label></td>
-                <td><input id="country-35" type="checkbox" name="countries" value="South Africa" > <label for="country-35">South Africa</label></td>
+            <tr><td><input id="country-31" type="checkbox" name="countries_edit" value="Portugal" > <label for="country-31">Portugal</label></td>
+                <td><input id="country-32" type="checkbox" name="countries_edit" value="Romania" > <label for="country-32">Romania</label></td>
+                <td><input id="country-33" type="checkbox" name="countries_edit" value="Russia" > <label for="country-33">Russia</label></td>
+                <td><input id="country-34" type="checkbox" name="countries_edit" value="Singapore" > <label for="country-34">Singapore</label></td>
+                <td><input id="country-35" type="checkbox" name="countries_edit" value="South Africa" > <label for="country-35">South Africa</label></td>
             </tr>
-            <tr><td><input id="country-36" type="checkbox" name="countries" value="Spain" > <label for="country-36">Spain</label></td>
-                <td><input id="country-37" type="checkbox" name="countries" value="Sweden" > <label for="country-37">Sweden</label></td>
-                <td><input id="country-38" type="checkbox" name="countries" value="Switzerland" > <label for="country-38">Switzerland</label></td>
-                <td><input id="country-39" type="checkbox" name="countries" value="Thailand" > <label for="country-39">Thailand</label></td>
-                <td><input id="country-40" type="checkbox" name="countries" value="United Kingdom" > <label for="country-40">United Kingdom</label></td>
+            <tr><td><input id="country-36" type="checkbox" name="countries_edit" value="Spain" > <label for="country-36">Spain</label></td>
+                <td><input id="country-37" type="checkbox" name="countries_edit" value="Sweden" > <label for="country-37">Sweden</label></td>
+                <td><input id="country-38" type="checkbox" name="countries_edit" value="Switzerland" > <label for="country-38">Switzerland</label></td>
+                <td><input id="country-39" type="checkbox" name="countries_edit" value="Thailand" > <label for="country-39">Thailand</label></td>
+                <td><input id="country-40" type="checkbox" name="countries_edit" value="United Kingdom" > <label for="country-40">United Kingdom</label></td>
             </tr>
-            <tr><td><input id="country-41" type="checkbox" name="countries" value="United States" > <label for="country-41">United States</label></td>
+            <tr><td><input id="country-41" type="checkbox" name="countries_edit" value="United States" > <label for="country-41">United States</label></td>
             </tr>
         </table>
+        <p id="countries_edit_p"></p>
     </div>
 
     <!-- Awards -->
-    <!-- Plot -->
-    <div class="form-group">
-        <label for="awards_id" class="label_font">Awards & Nominations</label>
-        <textarea class="form-control" rows="3" id="awards_id" placeholder="Awards and Nominations"></textarea>
+    <div class="form-group" >
+        <label for="awards_edit_id" class="label_font">Awards & Nominations</label>
+        <textarea class="form-control" rows="3" id="awards_edit_id" placeholder="Awards and Nominations"></textarea>
     </div>
 
     <!-- Poster URL -->
     <div class="form-group" >
-        <label for="poster_id" class="label_font">Poster URL</label>
-        <input type="text" class="form-control" id="poster_id" placeholder="IMDB poster URL">
+        <label for="poster_edit_id" class="label_font">Poster URL</label>
+        <input type="text" class="form-control" id="poster_edit_id" placeholder="IMDB poster URL">
+        <p id="poster_edit_id_p"></p>
     </div>
 
     <!-- Metascore -->
     <div class="form-group" >
-        <label for="score_id" class="label_font">Metascore</label>
-        <input type="text" class="form-control" id="score_id" placeholder="Metascore">
+        <label for="score_edit_id" class="label_font">Metascore</label>
+        <input type="text" class="form-control" id="score_edit_id" placeholder="Metascore">
+        <p id="score_edit_id_p"></p>
     </div>
 
     <!-- IMDB rating -->
     <div class="form-group" >
-        <label for="rating_id" class="label_font">IMDB rating</label>
-        <input type="text" class="form-control" id="rating_id" placeholder="IMDB rating">
+        <label for="rating_edit_id" class="label_font">IMDB rating</label>
+        <input type="text" class="form-control" id="rating_edit_id" placeholder="IMDB rating">
+        <p id="rating_edit_id_p"></p>
     </div>
 
     <!-- IMDB votes -->
@@ -238,23 +273,18 @@
         <input type="text" class="form-control" id="votes_id" placeholder="IMDB votes">
     </div>
 
-    <!-- IMDB ID -->
-    <div class="form-group" >
-        <label for="imdb_id" class="label_font">IMDB id</label>
-        <input type="text" class="form-control" id="imdb_id" placeholder="IMDB ID">
-    </div>
-
-    <!-- Country -->
+    <!-- Type of Title -->
     <div class="form-group">
-        <label for="type_id" class="label_font">Select Type of Title:</label>
-        <select class="form-control" id="type_id">
-            <option></option>
+        <label for="type_edit_id" class="label_font">Select Type of Title:</label>
+        <select class="form-control" id="type_edit_id">
             <option>Movie</option>
             <option>TV show</option>
         </select>
     </div>
+
+
     <br>
-    <button type="button" class="btn btn-primary" id="update_Title"><b>Update Title</b></button>
+    <button type="button" class="btn btn-primary" id="edit_Title"><b>Update Title</b></button>
     <button type="button" class="btn btn-primary" id="Cancel_update"><b>Cancel Title</b></button>
 
 </form>
